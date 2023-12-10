@@ -25,3 +25,12 @@ def test_total_price(shop_item):
 def test_low_price(shop_item):
      shop_item.apply_discount()
      assert shop_item.price == 1800*1
+
+def test_lenght_name(shop_item):
+    shop_item.name = 'СуперСмартфон'
+    assert len(shop_item.name) == 10
+
+def test_Item_string_to_number(shop_item):
+    assert Item.string_to_number('5') == 5
+    assert Item.string_to_number('5.0') == 5
+    assert Item.string_to_number('5.5') == 5
