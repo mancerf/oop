@@ -34,3 +34,7 @@ def test_Item_string_to_number(shop_item):
     assert Item.string_to_number('5') == 5
     assert Item.string_to_number('5.0') == 5
     assert Item.string_to_number('5.5') == 5
+
+def test_instantiate_from_csv(shop_item):
+    Item.instantiate_from_csv(r'C:\Users\Все пользователи\electronics-shop-project\src\items.csv')
+    assert len(Item.all) == 5
