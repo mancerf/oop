@@ -1,6 +1,4 @@
-import src
 import csv
-
 
 class Item:
     """
@@ -20,6 +18,7 @@ class Item:
         self.__name = name
         self.price = price
         self.quantity = quantity
+        Item.all.append(self)
 
     @property
     def name(self):
@@ -47,8 +46,6 @@ class Item:
         """
         self.price = self.price * self.pay_rate
 
-    def string_to_number(self):
-        return len(self.__name)
 
     @classmethod
     def instantiate_from_csv(cls, doc):
