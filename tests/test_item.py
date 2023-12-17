@@ -38,3 +38,11 @@ def test_Item_string_to_number(shop_item):
 def test_instantiate_from_csv(shop_item):
     Item.instantiate_from_csv(r'C:\Users\Все пользователи\electronics-shop-project\src\items.csv')
     assert len(Item.all) == 5
+
+
+def test_repr(shop_item):
+    assert repr(shop_item) == "Item('Тигель', 1800, 10)"
+
+
+def test_str(shop_item):
+    assert str(shop_item) == 'Тигель'
