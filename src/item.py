@@ -53,6 +53,16 @@ class Item:
         """
         self.price = self.price * self.pay_rate
 
+    def __add__(self, other):
+        """
+        Сложение количества товаров из классов Item и Phone
+        (сложение по количеству товара в магазине)
+        """
+        if isinstance(other, Item):
+            return self.quantity + other.quantity
+        else:
+            raise TypeError()
+
     @classmethod
     def instantiate_from_csv(cls, doc):
         '''класс-метод, инициализирующий экземпляры класса Item данными из файла src/items.csv'''
