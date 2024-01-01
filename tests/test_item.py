@@ -35,7 +35,7 @@ def test_Item_string_to_number(shop_item):
     assert Item.string_to_number('5.0') == 5
     assert Item.string_to_number('5.5') == 5
 
-def test_instantiate_from_csv(shop_item):
+def test_instantiate_from_csv():
     Item.instantiate_from_csv(r'C:\Users\Все пользователи\electronics-shop-project\src\items.csv')
     assert len(Item.all) == 5
 
@@ -46,3 +46,7 @@ def test_repr(shop_item):
 
 def test_str(shop_item):
     assert str(shop_item) == 'Тигель'
+
+def test_instantiate_from_csv_file_not():
+    with pytest.raises(FileNotFoundError):
+        Item.instantiate_from_csv('juguig.csv')
