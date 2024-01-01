@@ -1,11 +1,3 @@
-"""Тесты с использованием pytest для модуля phone"""
-
-import pytest
-from src.item import Item
-from src.phone import Phone
-
-"""Тесты с использованием pytest для модуля phone"""
-
 import pytest
 from src.item import Item
 from src.phone import Phone
