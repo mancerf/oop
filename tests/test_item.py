@@ -2,6 +2,7 @@
 import pytest
 
 from src.item import Item
+from src.csv_err import InstantiateCSVError
 
 @pytest.fixture
 def shop_item():
@@ -49,4 +50,7 @@ def test_str(shop_item):
 
 def test_instantiate_from_csv_file_not():
     with pytest.raises(FileNotFoundError):
-        Item.instantiate_from_csv('juguig.csv')
+        Item.instantiate_from_csv(r'C:\Users\Все пользователи\electronics-shop-project\src\iotems.csv')
+def test_instantiate_from_csv_err_colom():
+    with pytest.raises(InstantiateCSVError):
+        Item.instantiate_from_csv(r'C:\Users\Все пользователи\electronics-shop-project\src\N_items.csv')
